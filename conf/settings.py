@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 import os 
 
@@ -49,7 +50,9 @@ INSTALLED_APPS = [
     'address',
     
     'rest_framework',
-    
+    'django_filters',
+    'rest_framework_simplejwt',
+    'djoser'
 ]
 
 MIDDLEWARE = [
@@ -65,6 +68,31 @@ MIDDLEWARE = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ROOT_URLCONF = 'conf.urls'
+
+# SimpleJwt Setting
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('JWT',),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days = 1), 
+}
+
+# Rest FrameWork setting
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',  
+    ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',  
+    ),
+}
+
+# Djoser setting
+DJOSER = {
+    'SERIALIZERS':{
+        'user_create':'Users.serializers.UserCreate',
+        'current_user':'Users.serializers.CurrentUser'
+    }
+}
+
 
 TEMPLATES = [
     {
