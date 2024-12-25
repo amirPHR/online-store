@@ -1,12 +1,8 @@
 from rest_framework import serializers 
-from .models import Products , Comment
+from .models import Products 
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta: 
         model = Products 
-        fields = ['name' , 'description' , 'category' , 'price' , 'image' , 'created_at'] 
+        fields = ['id' , 'name' , 'description' , 'category' , 'price' , 'image' , 'created_at'] 
         
-class CommentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Comment
-        fields = ['user' , 'product' , ' comment' , 'created_at']

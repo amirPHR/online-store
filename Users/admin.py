@@ -9,4 +9,4 @@ class UserAdmin(admin.ModelAdmin):
     list_filter = ['date_joined']
     list_per_page = 10 
     ordering = ['username' , 'date_joined']
-    search_fields = ['email' , 'first_name' , 'last_name' , 'phone_number', 'national_code']
+    search_fields = ['email' , 'first_name' , 'last_name' , 'phone_number', 'national_code']   
