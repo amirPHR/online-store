@@ -6,19 +6,25 @@ from .views import UserViewSet # UserViewSet
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView # token
 
 from drf_yasg import openapi #swagger
-from drf_yasg.views import get_schema_view # view of swagger
+from drf_yasg.views import get_schema_view # view of swagger                                
 from rest_framework import permissions # permissions for swagger
 
 from category.views import CategoryViewSet # CategoryViewSet
 from Products.views import ProductViewSet # ProductViewSet
 from Cart.views import CartViewSet # CartViewSet 
+from address.views import AddressViewSet # AddressViewSet 
+from comments.views import CommentViewSet # CommentViewSet
+from Order.views import OrderViewSet # OrderViewSet 
 
 # Default Router
 router = DefaultRouter()
-router.register(r'Users', UserViewSet) # users
-router.register(r'Category' , CategoryViewSet) # category 
-router.register(r'Product' , ProductViewSet) # product
-router.register(r'Cart' , CartViewSet) # cart
+router.register(r'users', UserViewSet) # users
+router.register(r'category' , CategoryViewSet) # category 
+router.register(r'product' , ProductViewSet) # product
+router.register(r'cart' , CartViewSet) # cart
+router.register(r'address' , AddressViewSet) # address 
+router.register(r'comment' , CommentViewSet) # comment   
+router.register(r'order' , OrderViewSet) # order
 
 # swagger schema_view
 schema_view = get_schema_view(

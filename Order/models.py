@@ -2,7 +2,7 @@ from django.db import models
 from Users.models import CustomUser 
 from Products.models import Products 
 from Cart.models import Cart 
-from address.models import address
+from address.models import Address
 
 class Order(models.Model):
     user = models.ForeignKey(CustomUser , on_delete = models.CASCADE) 
@@ -13,4 +13,4 @@ class Order(models.Model):
     ]
     status = models.CharField(max_length = 20 , choices = STATUS_CHOICES) 
     cart = models.ForeignKey(Cart , on_delete=models.CASCADE) 
-    address = models.ForeignKey(address , on_delete = models.CASCADE) 
+    address = models.ForeignKey(Address , on_delete = models.CASCADE) 

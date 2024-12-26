@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import address
+from .models import Address
 
-@admin.register(address)
+@admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
     list_display = ['user' , 'country' , 'city' , 'address']
     list_display_links = ['user']

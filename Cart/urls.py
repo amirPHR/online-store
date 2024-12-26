@@ -1,6 +1,6 @@
 from django.urls import path 
 
-# the url of cart in the users cart
+# the url of cart in the users url
 urlpatterns = [
     
 ]
