@@ -9,3 +9,7 @@ class Products(models.Model):
     price = models.PositiveIntegerField() 
     image = models.ImageField(upload_to='product_images/')
     created_at = models.DateField(auto_now_add = True)
+    
+    
+    def __str__(self):
+        return self.name

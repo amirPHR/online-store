@@ -2,19 +2,23 @@ from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter #Router
 
-from .views import UserViewSet # UserViewSet
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView # token
+# Token
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView 
 
+# Swagger
 from drf_yasg import openapi #swagger
 from drf_yasg.views import get_schema_view # view of swagger                                
 from rest_framework import permissions # permissions for swagger
 
+# ViewSets
+from .views import UserViewSet # UserViewSet
 from category.views import CategoryViewSet # CategoryViewSet
 from Products.views import ProductViewSet # ProductViewSet
 from Cart.views import CartViewSet # CartViewSet 
 from address.views import AddressViewSet # AddressViewSet 
 from comments.views import CommentViewSet # CommentViewSet
 from Order.views import OrderViewSet # OrderViewSet 
+from payment.views import PaymentViewSet # PaymentViewSet
 
 # Default Router
 router = DefaultRouter()
@@ -25,6 +29,7 @@ router.register(r'cart' , CartViewSet) # cart
 router.register(r'address' , AddressViewSet) # address 
 router.register(r'comment' , CommentViewSet) # comment   
 router.register(r'order' , OrderViewSet) # order
+router.register(r'payment' , PaymentViewSet) # payment 
 
 # swagger schema_view
 schema_view = get_schema_view(
