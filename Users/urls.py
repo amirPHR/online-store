@@ -51,4 +51,5 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # Give token
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),  # Refresh token
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger'),  # Corrected Swagger path
+    
 ]

@@ -3,9 +3,7 @@ from .models import Cart
 
 class CartSerializer(serializers.ModelSerializer):
     total_price = serializers.SerializerMethodField(read_only=True)
-    user = serializers.StringRelatedField()
-    product = serializers.StringRelatedField() 
-    
+
     class Meta:
         model = Cart 
         fields = ['id' , 'user' , 'product' , 'quantity' , 'total_price']

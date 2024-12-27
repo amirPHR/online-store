@@ -1,3 +1,4 @@
 env/ 
 token.txt 
 db.sqlite3
+debug.log
